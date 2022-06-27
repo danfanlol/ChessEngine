@@ -1,0 +1,23 @@
+This was a super fun project to make and it taught me so many things about Game Theory, Minimax and Negamax searching, Alpha-beta pruning, and how the search tree works.
+
+I see now why it is so hard to create an excellent chess engine. 
+
+It all comes down to the evaluation algorithm that is different for every engine. My evaluation algorithm is quite short and doesn't consider enough cases as the ones that were used against Garry Kasparov.
+
+Their evaluation algorithms span hundreds of lines of code, covering many different cases that are likely to pop up. 
+
+Along with having ingrained opening theory into their programs which would take an incredible amount of time considering there are hundreds of openings, the chess engines used in professional companies are truly one-of-a-kind.
+
+But enough talking about them, let's talk about my engine and how it works:
+
+Whenever a player makes a move, they ponder on if the move is good or not. That is, if the position that exists after is a winnable position for them.
+
+A winnable position depends on the moves that can be made after it; a person that is about to checkmate a helpless player is in a very winnable position due to the moves that will come after it.
+
+A player that is about to take the queen of another player is also in a very winnable position (most of the times) due to the moves that will come after it (the player will be left with no queen and therefore more of the other player's pieces can be used for the attack).
+
+So, in order to evaluate a position, you must look at the positions that come after and see if they are good. This is where the search tree comes into play, and searching algorithms such as Negamax and Minimax evaluate hundreds of thousands of possible positions to see if they are winning. Alpha-beta pruning can be used to speed up this process by removing redundent search paths. 
+
+However, the magic of the engine is the algorithm used to see how much strength a position has. How can it be done? If the position is a checkmate, then the strength is maximum. If the position is missing a queen, the strength is usually less.
+
+Such questions are answered in many different ways by different people in different companies but for the person that is just doing this for fun and not for a paycheck, it will simply do to check the positional values and the actual piece values and contrast them with each other. This concludes my evaluation algorithm. Anti-climatic right? 
